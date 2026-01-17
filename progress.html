@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The New Leaf | Progress</title>
+  <link rel="stylesheet" href="../css/progress.css" />
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">The New Leaf</div>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+    <a href="settings.html">Settings</a>
+  </div>
+</nav>
+
+
+  <div class="overlay">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Your Progress</h1>
+      <p>Track how far you've come; tasks completed and grades earned.</p>
+    </section>
+
+    <!-- Overall Progress -->
+    <section class="card overall-card">
+      <h2>Overall Completion</h2>
+      <div class="progress-circle" id="progress-circle">
+        <span id="overall-percent">0%</span>
+      </div>
+      <p id="overall-text">You're just getting started.</p>
+    </section>
+
+    <!-- Subject Task Progress -->
+    <section class="card subjects-card">
+      <h2>Subject Progress</h2>
+
+      <div class="complete-row">
+        <select id="subject-select"></select>
+        <button id="complete-task-btn">+ Mark Task Completed</button>
+      </div>
+
+      <div id="subject-list"></div>
+      <div id="subject-detail" class="subject-detail hidden"></div>
+    </section>
+
+    <!-- Grades Section -->
+    <section class="card grades-card">
+      <h2>Your Grades</h2>
+      <p class="grades-subtitle">Add your current grades to see your GPA.</p>
+
+      <div id="grades-list"></div>
+
+      <button id="add-grade-btn">+ Add / Update Grade</button>
+
+      <div class="gpa-box">
+        GPA: <span id="gpa-value">0.0</span>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 The New Leaf
+    </footer>
+
+  </div>
+
+  <script src="../js/progress.js"></script>
+  <script src="../js/global.js"></script>
+
+</body>
+</html>

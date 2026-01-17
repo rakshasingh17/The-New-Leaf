@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The New Leaf | Settings</title>
+  <link rel="stylesheet" href="../css/settings.css" />
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">The New Leaf</div>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+    <a href="settings.html">Settings</a>
+  </div>
+</nav>
+
+
+  <div class="overlay">
+
+    <section class="hero">
+      <h1>Settings</h1>
+      <p>Customize your experience your way.</p>
+    </section>
+
+    <!-- Profile -->
+    <section class="card">
+      <h2>Profile</h2>
+      <label>Name</label>
+      <input type="text" id="name-input" placeholder="Enter your name">
+      <button id="save-name-btn">Save Name</button>
+      <p id="saved-name-text"></p>
+    </section>
+
+    <!-- Appearance -->
+    <section class="card">
+      <h2>Appearance</h2>
+
+      <div class="setting-row">
+        <span>Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="dark-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-row">
+        <span>Theme Color</span>
+        <select id="theme-select">
+          <option value="sage">Sage Green</option>
+          <option value="lavender">Lavender</option>
+          <option value="sky">Sky Blue</option>
+          <option value="peach">Peach</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Data -->
+    <section class="card danger-card">
+      <h2>Data</h2>
+      <button id="reset-btn">Reset All Data</button>
+      <p class="danger-text">This will clear tasks, grades, and progress.</p>
+    </section>
+
+    <footer>
+      © 2026 The New Leaf
+    </footer>
+
+  </div>
+
+  <script src="../js/settings.js"></script>
+  <script src="../js/global.js"></script>
+
+</body>
+</html>

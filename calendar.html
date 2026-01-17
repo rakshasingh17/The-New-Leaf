@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The New Leaf — Calendar</title>
+  <link rel="stylesheet" href="../css/calendar.css" />
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">The New Leaf</div>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+    <a href="settings.html">Settings</a>
+  </div>
+</nav>
+
+
+  <div class="overlay">
+
+    <!-- Header -->
+    <header class="hero">
+      <h1>Calendar</h1>
+      <p>Plan your days, track your deadlines, stay ahead.</p>
+    </header>
+
+    <!-- Calendar Controls -->
+    <div class="calendar-controls">
+      <button id="prev-month">&#10094;</button>
+      <h2 id="month-year"></h2>
+      <button id="next-month">&#10095;</button>
+    </div>
+
+    <!-- Weekdays -->
+    <div class="weekdays">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+      <div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="calendar-grid" id="calendar-grid"></div>
+
+    <!-- Selected Date Panel -->
+    <section class="event-panel">
+      <h3 id="selected-date-title">Select a date</h3>
+      <div id="event-list"></div>
+      <button id="add-event-btn">+ Add Event</button>
+    </section>
+
+  </div>
+
+  <!-- Add Event Modal -->
+  <div class="modal" id="event-modal">
+    <div class="modal-content">
+      <h3>Add Event</h3>
+      <input type="text" id="event-title" placeholder="Event title" />
+      <input type="time" id="event-time" />
+      <button id="save-event-btn">Save</button>
+      <button id="cancel-event-btn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="../js/calendar.js"></script>
+  <script src="../js/global.js"></script>
+
+</body>
+</html>

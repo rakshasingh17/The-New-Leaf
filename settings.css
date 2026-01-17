@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #f1f5f3, #e6efe9);
+  transition: background 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent, #2f855a);
+}
+
+.nav-right a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent, #2f855a);
+  transition: width 0.25s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+
+.overlay {
+  min-height: 100vh;
+  padding: 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--accent, #2f855a);
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  color: #1f2933;
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.card h2 {
+  color: var(--accent, #2f855a);
+  margin-bottom: 1rem;
+}
+
+/* Inputs */
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e0;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+
+button {
+  background: var(--accent, #2f855a);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Rows */
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 12px 0;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #cbd5e0;
+  border-radius: 24px;
+  inset: 0;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: var(--accent, #2f855a);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* Danger */
+.danger-card {
+  border: 2px solid #fed7d7;
+  background: #fff5f5;
+}
+
+.danger-text {
+  font-size: 0.85rem;
+  color: #c53030;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #718096;
+  text-align: center;
+}
+
+/* ======================
+   DARK MODE OVERRIDES
+   ====================== */
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb; /* default text light */
+}
+
+.dark .card,
+.dark .task-card,
+.dark .deadline-card,
+.dark .progress-card,
+.dark .calendar-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark .navbar {
+  background: #020617;
+}
+
+.dark .navbar a {
+  color: #e5e7eb;
+}
+
+.dark .navbar a:hover::after {
+  background: #e5e7eb;
+}
+
+/* Inputs & selects */
+.dark input,
+.dark select {
+  background: #2d3748;
+  color: #e5e7eb;
+  border-color: #4a5568;
+}
+
+/* Buttons */
+.dark button,
+.dark #add-task-btn,
+.dark #add-deadline-btn,
+.dark #complete-task-btn,
+.dark #add-grade-btn,
+.dark #save-task-btn,
+.dark #cancel-task-btn,
+.dark #save-deadline-btn,
+.dark #cancel-deadline-btn {
+  color: white;
+  background-color: #276c49; /* you can tweak for accent */
+}
+
+/* Danger cards text */
+.dark .danger-card,
+.dark .danger-text {
+  color: #fed7d7;
+  background-color: #742a2a;
+}
+
+/* Other small text elements */
+.dark p, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark span {
+  color: #e5e7eb;
+}

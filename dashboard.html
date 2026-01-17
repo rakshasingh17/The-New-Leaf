@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The New Leaf - Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="nav-left">The New Leaf</div>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+    <a href="settings.html">Settings</a>
+  </div>
+</nav>
+
+
+  <div class="overlay">
+
+    <!-- Header -->
+    <header class="hero">
+      <h1>Dashboard</h1>
+      <p>Here’s an overview of your academic tasks and deadlines.</p>
+    </header>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-grid">
+
+      <!-- =======================
+           Today's Tasks Section
+           ======================= -->
+      <section class="card-section">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h2>Today's Tasks</h2>
+          <button id="add-task-btn">+ Add Task</button>
+        </div>
+
+        <div class="card-list" id="task-list">
+          <div class="task-card">
+            <h3>Math Assignment</h3>
+            <p>Calculus - Due: 2026-01-20</p>
+            <span class="status pending">Pending</span>
+            <button class="delete-btn">Delete</button>
+          </div>
+
+          <div class="task-card">
+            <h3>Physics Lab</h3>
+            <p>Mechanics - Due: 2026-01-18</p>
+            <span class="status completed">Completed</span>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- =======================
+           Upcoming Deadlines
+           ======================= -->
+      <section class="card-section">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <h2>Upcoming Deadlines</h2>
+          <button id="add-deadline-btn">+ Add Deadline</button>
+        </div>
+
+        <div class="card-list" id="deadline-list">
+          <div class="deadline-card">
+            <h3>Electrical Lab Report</h3>
+            <p>Due: 2026-01-22</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+
+          <div class="deadline-card">
+            <h3>Data Structures Assignment</h3>
+            <p>Due: 2026-01-23</p>
+            <button class="delete-btn">Delete</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>Designed for students. Built for focus.</p>
+    </footer>
+
+  </div>
+
+  <!-- =======================
+       Add Task Popup
+       ======================= -->
+  <div id="task-form" class="form-popup">
+    <h3>Add New Task</h3>
+    <input type="text" id="task-title" placeholder="Task title" />
+    <input type="text" id="task-subject" placeholder="Subject" />
+    <input type="date" id="task-due" />
+    <select id="task-status">
+      <option value="Pending">Pending</option>
+      <option value="Completed">Completed</option>
+    </select>
+    <button id="save-task-btn">Save Task</button>
+    <button id="cancel-task-btn">Cancel</button>
+  </div>
+
+  <!-- =======================
+       Add Deadline Popup
+       ======================= -->
+  <div id="deadline-form" class="form-popup">
+    <h3>Add New Deadline</h3>
+    <input type="text" id="deadline-title" placeholder="Deadline title" />
+    <input type="date" id="deadline-due" />
+    <button id="save-deadline-btn">Save</button>
+    <button id="cancel-deadline-btn">Cancel</button>
+  </div>
+
+  <!-- =======================
+       JavaScript
+       ======================= -->
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/global.js"></script>
+
+
+</body>
+</html>

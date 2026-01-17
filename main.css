@@ -1,0 +1,184 @@
+/* Reset & fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+/* Background image setup */
+body {
+  min-height: 100vh;
+  background-image: url("https://i.pinimg.com/736x/e5/08/27/e508270234aed264fd92d968f5844f58.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+
+  display: flex;               /* flex container */
+  justify-content: center;     /* center horizontally */
+  align-items: center;         /* center vertically */
+  text-align: center;          /* center text */
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.nav-section {
+  .nav-section {
+  display: flex;               /* use flex layout */
+  justify-content: center;     /* center buttons horizontally */
+  gap: 1rem;                   /* spacing between buttons */
+  flex-wrap: nowrap;           /* prevent wrapping */
+  margin-bottom: 2rem;
+  width: auto;                 /* allow it to expand */
+  overflow-x: auto;            /* allow horizontal scroll if needed */
+  padding: 0 10px;             /* optional padding on sides */
+}
+}
+
+
+.overlay {
+   background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 1000px;    /* increase max width */
+  width: 95%;           /* allow it to expand */
+  margin: 0 auto;       /* center overlay */
+  text-align: center;
+}
+
+
+ 
+
+
+/* Hero Section */
+.hero h1 {
+  font-size: 3rem;
+  color: #2f855a;
+  margin-bottom: 1rem;
+}
+
+
+.hero p {
+  font-size: 1.1rem;
+  color: #1f2933;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+
+/* Navigation buttons */
+.nav-section {
+  display: flex;               /* flex layout */
+  justify-content: center;     /* center horizontally */
+  gap: 1rem;                   /* space between buttons */
+  flex-wrap: nowrap;           /* prevent wrapping */
+  margin-bottom: 2rem;
+  width: 100%;                 /* full width of overlay */
+  overflow-x: auto;            /* scroll if screen too small */
+}
+
+
+  .card {
+  background: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+  flex: 1 0 auto;       /* flex-grow and shrink to fit in one row */
+  text-align: center;    /* center text inside button */
+  white-space: nowrap;   /* prevent text from breaking */
+}
+
+
+
+
+
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+
+/* Footer */
+footer {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+/* ======================
+   DARK MODE OVERRIDES
+   ====================== */
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb; /* default text light */
+}
+
+.dark .card,
+.dark .task-card,
+.dark .deadline-card,
+.dark .progress-card,
+.dark .calendar-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark .navbar {
+  background: #020617;
+}
+
+.dark .navbar a {
+  color: #e5e7eb;
+}
+
+.dark .navbar a:hover::after {
+  background: #e5e7eb;
+}
+
+/* Inputs & selects */
+.dark input,
+.dark select {
+  background: #2d3748;
+  color: #e5e7eb;
+  border-color: #4a5568;
+}
+
+/* Buttons */
+.dark button,
+.dark #add-task-btn,
+.dark #add-deadline-btn,
+.dark #complete-task-btn,
+.dark #add-grade-btn,
+.dark #save-task-btn,
+.dark #cancel-task-btn,
+.dark #save-deadline-btn,
+.dark #cancel-deadline-btn {
+  color: white;
+  background-color: #276c49; 
+}
+
+/* Danger cards text */
+.dark .danger-card,
+.dark .danger-text {
+  color: #fed7d7;
+  background-color: #742a2a;
+}
+
+/* Other small text elements */
+.dark p, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark span {
+  color: #e5e7eb;
+}
+

@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #f1f5f3, #e6efe9);
+}
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent, #2f855a);
+}
+
+.nav-right a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent, #2f855a);
+  transition: width 0.25s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+
+.overlay {
+  min-height: 100vh;
+  padding: 24px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #2f855a;
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  color: #1f2933;
+  margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 700px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.card h2 {
+  color: #2f855a;
+  margin-bottom: 0.8rem;
+}
+
+/* Overall */
+.overall-card {
+  text-align: center;
+}
+
+.progress-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: conic-gradient(#2f855a 0deg, #e2e8f0 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2f855a;
+  margin: 0.8rem auto;
+}
+
+/* Subjects */
+.complete-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.complete-row select {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+}
+
+#complete-task-btn {
+  background: #2f855a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#complete-task-btn:hover {
+  background: #276c49;
+}
+
+.subject-item {
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.subject-bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.subject-fill {
+  height: 100%;
+  background: #2f855a;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.subject-detail {
+  margin-top: 0.8rem;
+  background: #f1f5f3;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Grades */
+.grades-subtitle {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.8rem;
+}
+
+.grade-row {
+  display: flex;
+  justify-content: space-between;
+  background: #f7faf9;
+  padding: 8px 12px;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.grade-row span {
+  color: #2f855a;
+}
+
+#add-grade-btn {
+  background: #edf7f2;
+  color: #2f855a;
+  border: 2px dashed #2f855a;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+#add-grade-btn:hover {
+  background: #e2f3ea;
+}
+
+.gpa-box {
+  margin-top: 1rem;
+  padding: 10px;
+  background: #f1f5f3;
+  border-radius: 10px;
+  font-weight: 700;
+  color: #2f855a;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #718096;
+  text-align: center;
+}
+
+/* ======================
+   DARK MODE OVERRIDES
+   ====================== */
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb; /* default text light */
+}
+
+.dark .card,
+.dark .task-card,
+.dark .deadline-card,
+.dark .progress-card,
+.dark .calendar-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark .navbar {
+  background: #020617;
+}
+
+.dark .navbar a {
+  color: #e5e7eb;
+}
+
+.dark .navbar a:hover::after {
+  background: #e5e7eb;
+}
+
+/* Inputs & selects */
+.dark input,
+.dark select {
+  background: #2d3748;
+  color: #e5e7eb;
+  border-color: #4a5568;
+}
+
+/* Buttons */
+.dark button,
+.dark #add-task-btn,
+.dark #add-deadline-btn,
+.dark #complete-task-btn,
+.dark #add-grade-btn,
+.dark #save-task-btn,
+.dark #cancel-task-btn,
+.dark #save-deadline-btn,
+.dark #cancel-deadline-btn {
+  color: white;
+  background-color: #276c49; 
+}
+
+/* Danger cards text */
+.dark .danger-card,
+.dark .danger-text {
+  color: #fed7d7;
+  background-color: #742a2a;
+}
+
+/* Other small text elements */
+.dark p, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark span {
+  color: #e5e7eb;
+}
+

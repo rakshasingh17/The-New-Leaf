@@ -1,0 +1,385 @@
+/* ======================
+   Base
+   ====================== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f3f7f5, #e4efe9);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent, #2f855a);
+}
+
+.nav-right a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent, #2f855a);
+  transition: width 0.25s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+
+.overlay {
+  min-height: 100vh;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ======================
+   Header
+   ====================== */
+.hero {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  color: #2f855a;
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  color: #1f2933;
+  font-size: 1.05rem;
+}
+
+/* ======================
+   Calendar Controls
+   ====================== */
+.calendar-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-controls button {
+  background: #e6f0eb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2f855a;
+  transition: 0.2s ease;
+}
+
+.calendar-controls button:hover {
+  background: #cfe3da;
+}
+
+#month-year {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2933;
+}
+
+/* ======================
+   Weekdays
+   ====================== */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+/* ======================
+   Calendar Grid
+   ====================== */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+
+/* ======================
+   Day Cells
+   ====================== */
+.day {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  padding: 10px;
+  min-height: 90px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: 0.15s ease;
+}
+
+.day:hover {
+  transform: translateY(-2px);
+}
+
+.day.other-month {
+  opacity: 0.35;
+}
+
+.day.today {
+  border: 2px solid #2f855a;
+}
+
+.day.selected {
+  background: #cfe3da;
+}
+
+.date-number {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #2f855a;
+}
+
+/* Event dots */
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background: #2f855a;
+  border-radius: 50%;
+  margin-top: 4px;
+}
+
+/* ======================
+   Event Panel
+   ====================== */
+.event-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: auto;
+}
+
+.event-panel h3 {
+  margin-top: 0;
+  color: #2f855a;
+  text-align: center;
+}
+
+#event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.event-item {
+  background: #f3f7f5;
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.event-item span {
+  color: #1f2933;
+}
+
+.delete-event-btn {
+  background: #fee2e2;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #c53030;
+}
+
+.delete-event-btn:hover {
+  background: #fecaca;
+}
+
+#add-event-btn {
+  width: 100%;
+  background: #2f855a;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+#add-event-btn:hover {
+  background: #276c49;
+}
+
+/* ======================
+   Modal
+   ====================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  width: 280px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #2f855a;
+}
+
+.modal-content input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e0;
+}
+
+.modal-content button {
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#save-event-btn {
+  background: #2f855a;
+  color: white;
+}
+
+#cancel-event-btn {
+  background: #e2e8f0;
+}
+
+/* ======================
+   Responsive
+   ====================== */
+@media (max-width: 700px) {
+  .calendar-grid {
+    gap: 0.4rem;
+  }
+
+  .day {
+    min-height: 70px;
+    padding: 8px;
+  }
+}
+
+/* ======================
+   DARK MODE OVERRIDES
+   ====================== */
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb; /* default text light */
+}
+
+.dark .card,
+.dark .task-card,
+.dark .deadline-card,
+.dark .progress-card,
+.dark .calendar-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark .navbar {
+  background: #020617;
+}
+
+.dark .navbar a {
+  color: #e5e7eb;
+}
+
+.dark .navbar a:hover::after {
+  background: #e5e7eb;
+}
+
+/* Inputs & selects */
+.dark input,
+.dark select {
+  background: #2d3748;
+  color: #e5e7eb;
+  border-color: #4a5568;
+}
+
+/* Buttons */
+.dark button,
+.dark #add-task-btn,
+.dark #add-deadline-btn,
+.dark #complete-task-btn,
+.dark #add-grade-btn,
+.dark #save-task-btn,
+.dark #cancel-task-btn,
+.dark #save-deadline-btn,
+.dark #cancel-deadline-btn {
+  color: white;
+  background-color: #276c49; /* you can tweak for accent */
+}
+
+/* Danger cards text */
+.dark .danger-card,
+.dark .danger-text {
+  color: #fed7d7;
+  background-color: #742a2a;
+}
+
+/* Other small text elements */
+.dark p, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark span {
+  color: #e5e7eb;
+}

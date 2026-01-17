@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The New Leaf — Tasks</title>
+  <link rel="stylesheet" href="../css/tasks.css" />
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-left">The New Leaf</div>
+  <div class="nav-right">
+    <a href="../index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="progress.html">Progress</a>
+    <a href="settings.html">Settings</a>
+  </div>
+</nav>
+
+
+  <div class="overlay">
+
+    <!-- Header -->
+    <header class="hero">
+      <h1>Tasks</h1>
+      <p>Organize, track, and manage everything in one place.</p>
+    </header>
+
+    <!-- Controls -->
+    <section class="controls">
+      <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="pending">Pending</button>
+        <button class="filter-btn" data-filter="completed">Completed</button>
+      </div>
+
+      <button id="add-task-btn">+ Add Task</button>
+    </section>
+
+    <!-- Task List -->
+    <section class="task-list" id="task-list">
+      <!-- Tasks appear here -->
+    </section>
+
+  </div>
+
+  <!-- Add/Edit Task Modal -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <h3 id="modal-title">Add Task</h3>
+      <input type="text" id="task-title" placeholder="Task title" />
+      <input type="text" id="task-subject" placeholder="Subject" />
+      <input type="date" id="task-due" />
+      <select id="task-status">
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <div class="modal-actions">
+        <button id="save-task-btn">Save</button>
+        <button id="cancel-task-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/tasks.js"></script>
+  <script src="../js/global.js"></script>
+
+</body>
+</html>

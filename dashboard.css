@@ -1,0 +1,306 @@
+/* ======================
+   Overlay & general layout
+   ====================== */
+
+  body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-image: url("https://i.pinimg.com/1200x/8d/65/34/8d6534463862a16d839edd8edfdc6ad8.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--accent, #2f855a);
+}
+
+.nav-right a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-right a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: var(--accent, #2f855a);
+  transition: width 0.25s ease;
+}
+
+.nav-right a:hover::after {
+  width: 100%;
+}
+
+
+
+
+.overlay {
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ======================
+   Hero Section
+   ====================== */
+.hero h1 {
+  font-size: 2.8rem;
+  color: #2f855a; /* sage green */
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #1f2933;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* ======================
+   Dashboard Grid
+   ====================== */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+/* ======================
+   Card Section Titles
+   ====================== */
+.card-section h2 {
+  font-size: 1.5rem;
+  color: #2f855a;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+/* ======================
+   Card Lists
+   ====================== */
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ======================
+   Cards
+   ====================== */
+.task-card, .deadline-card, .progress-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+/* ======================
+   Task Status Badges
+   ====================== */
+.status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+}
+
+.status.pending { background-color: #f6ad55; } /* orange */
+.status.completed { background-color: #38a169; } /* green */
+
+
+/* ======================
+   Add Task Button
+   ====================== */
+#add-task-btn {
+  background-color: #2f855a;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+#add-task-btn:hover {
+  background-color: #276c49;
+}
+
+#add-deadline-btn {
+  background-color: #a7c7b7; /* soft sage */
+  color: #1f2933;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+#add-deadline-btn:hover {
+  background-color: #8fb5a3;
+  transform: translateY(-1px);
+}
+
+
+/* ======================
+   Task Form Popup
+   ====================== */
+.form-popup {
+  display: none;              /* hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fefefe;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  width: 300px;
+}
+
+.form-popup input,
+.form-popup select {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.form-popup button {
+  margin: 5px 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#save-task-btn { 
+  background-color: #2f855a; 
+  color: white; 
+  width: 100%;
+}
+
+#cancel-task-btn { 
+  background-color: #e2e8f0; 
+  width: 100%; 
+}
+
+/* ======================
+   Footer
+   ====================== */
+footer {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-top: 2rem;
+}
+
+/* ======================
+   Responsive
+   ====================== */
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================
+   DARK MODE OVERRIDES
+   ====================== */
+.dark body {
+  background: #0f172a;
+  color: #e5e7eb; /* default text light */
+}
+
+.dark .card,
+.dark .task-card,
+.dark .deadline-card,
+.dark .progress-card,
+.dark .calendar-card {
+  background: #1e293b;
+  color: #e5e7eb;
+}
+
+.dark .navbar {
+  background: #020617;
+}
+
+.dark .navbar a {
+  color: #e5e7eb;
+}
+
+.dark .navbar a:hover::after {
+  background: #e5e7eb;
+}
+
+/* Inputs & selects */
+.dark input,
+.dark select {
+  background: #2d3748;
+  color: #e5e7eb;
+  border-color: #4a5568;
+}
+
+/* Buttons */
+.dark button,
+.dark #add-task-btn,
+.dark #add-deadline-btn,
+.dark #complete-task-btn,
+.dark #add-grade-btn,
+.dark #save-task-btn,
+.dark #cancel-task-btn,
+.dark #save-deadline-btn,
+.dark #cancel-deadline-btn {
+  color: white;
+  background-color: #276c49; 
+}
+
+/* Danger cards text */
+.dark .danger-card,
+.dark .danger-text {
+  color: #fed7d7;
+  background-color: #742a2a;
+}
+
+/* Other small text elements */
+.dark p, 
+.dark h1, 
+.dark h2, 
+.dark h3, 
+.dark span {
+  color: #e5e7eb;
+}
