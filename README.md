@@ -9,7 +9,7 @@ HTML5
 
 CSS3
 
-JavaScript (Vanilla)
+JavaScript
 
 How to Run the Project
 
